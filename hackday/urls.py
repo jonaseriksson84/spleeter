@@ -12,7 +12,7 @@ urlpatterns = [
     url(r"^split/$", views.hello_world),
     path("upload/", views.UploadView.as_view(), name="upload"),
     path(
-        "download/<str:song>/<str:filename>/",
+        "download/<str:song>/<str:filename>",
         views.DownloadView.as_view(),
         name="download",
     ),

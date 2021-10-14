@@ -1,3 +1,4 @@
 django
 djangorestframework
 spleeter
+django-cors-headers

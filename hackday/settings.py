@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "corsheaders",
     "testgrej",
 ]
 
@@ -51,6 +52,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "hackday.urls"
@@ -136,3 +139,8 @@ REST_FRAMEWORK = {
 DATA_UPLOAD_MAX_NUMBER_FIELDS = None
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+APPEND_SLASH = False
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]
