@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from rest_framework.urls import path
 from rest_framework import routers
-from hackday.split import views
+from testgrej import views
 
 router = routers.DefaultRouter()
 
@@ -11,4 +11,9 @@ router = routers.DefaultRouter()
 urlpatterns = [
     url(r"^split/$", views.hello_world),
     path("upload/", views.UploadView.as_view(), name="upload"),
+    path(
+        "download/<str:song>/<str:filename>/",
+        views.DownloadView.as_view(),
+        name="download",
+    ),
 ]
